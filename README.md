@@ -39,24 +39,24 @@ pip list --outdated | select -Skip 2 | % {pip install --upgrade $_.split(' ')[0]
 
 1. Get the list of outdated pip modules. (Same list produced)
 
-````powershell
-pip list --outdated
-````
+    ````powershell
+    pip list --outdated
+    ````
 
 2. List produces a header and line separator. We want to skip those 2 lines. So:
 
-````powershell
-Select-Object -Skip 2
-````
+    ````powershell
+    Select-Object -Skip 2
+    ````
 
 3. Parse the text in each line so that we extract only the names. Using space as a delimiter, we will get the first word in the first element of each array.
 
-````powershell
-ForEach-Object {$_.split(' ')[0]}
-````
+    ````powershell
+    ForEach-Object {$_.split(' ')[0]}
+    ````
 
 4. Pipe the output of the previous step to the command to upgrade said module.
 
-````powershell
-ForEach-Object {pip install --upgrade $_}
-````
+    ````powershell
+    ForEach-Object {pip install --upgrade $_}
+    ````
