@@ -35,7 +35,7 @@ Same result with short-hand version:
 pip list --outdated | select -Skip 2 | % {pip install --upgrade $_.split(' ')[0]}
 ````
 
-## Worflow explained
+## Workflow explained
 
 1. Get the list of outdated pip modules. (Same list produced above)
 
