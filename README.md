@@ -37,7 +37,7 @@ pip list --outdated | select -Skip 2 | % {pip install --upgrade $_.split(' ')[0]
 
 ## Worflow explained
 
-1. Get the list of outdated pip modules. (Same list produced)
+1. Get the list of outdated pip modules. (Same list produced above)
 
     ````powershell
     pip list --outdated
